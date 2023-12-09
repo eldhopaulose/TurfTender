@@ -5,6 +5,13 @@ const favorites = async (req, res) => {
     const userId = req.user._id;
     const turfId = req.params.id;
     console.log(turfId);
+
+    const exists = await Favorites.findOne({ turfId });
+
+    if (exists) {
+      throw Error("Turf already added");
+    }
+
     const favorite = await Favorites.create({
       userId,
       turfId,

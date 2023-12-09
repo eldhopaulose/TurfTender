@@ -10,6 +10,7 @@ const createTurf = async (req, res) => {
     facilities,
     availableDates,
     workingHours,
+    description,
   } = req.body;
   try {
     const date = new Date();
@@ -44,6 +45,7 @@ const createTurf = async (req, res) => {
       rate,
       event,
       facilities,
+      description,
       availableDates,
       workingHours,
       createdDate:
