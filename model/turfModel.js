@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 
 const turfSchema = new Schema(
   {
-    image: {
-      type: String,
+    images: {
+      type: Array,
       required: true,
     },
+
     name: {
       type: String,
       required: true,
@@ -29,7 +30,7 @@ const turfSchema = new Schema(
       required: true,
     },
     availableDates: {
-      type: String,
+      type: Array,
       required: true,
     },
     workingHours: {

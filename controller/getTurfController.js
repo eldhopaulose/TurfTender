@@ -1,5 +1,6 @@
 const Turf = require("../model/turfModel");
 const Book = require("../model/bookModel");
+const User = require("../model/userModel");
 
 const getAllTurf = async (req, res) => {
   const event = req.params.category;
@@ -31,12 +32,26 @@ const turfBook = async (req, res) => {
     const user_id = req.user._id;
     const turfId = req.params.id;
     console.log(user_id, turfId);
-    const { time, rate } = req.body;
+    const { time, rate, date } = req.body;
+
+    const user = await User.findById(user_id);
+
+    if (!user) {
+      throw new Error("username not found");
+    }
+
+    const username = user.name;
+    const mobileNumber = user.mobileNumber;
+
+    console.log(username);
+
     const book = await Book.create({
-      userId: user_id,
+      name: username,
+      mobileNumber: mobileNumber,
       turfId: turfId,
       time: time,
       rate: rate,
+      date: date,
     });
     res.status(200).json({ book });
   } catch (error) {

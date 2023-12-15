@@ -9,6 +9,7 @@ const usersRouter = require("./routes/users");
 const adminUser = require("./routes/adminUser");
 const getTurfRouter = require("./routes/getTurf");
 const getfavoritesRouter = require("./routes/favorites");
+const getBookingDetailsRouter = require("./routes/getBookingDetails");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 
 app.use("/api/admin", turfRouter);
 app.use("/api/admin/user", adminUser);
+app.use("/api/admin/", getBookingDetailsRouter);
 
 app.use("/api/users", usersRouter);
 app.use("/api/turf", getTurfRouter);

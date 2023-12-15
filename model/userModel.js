@@ -28,6 +28,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  admin: {
+    type: Boolean,
+    required: true,
+  },
   otp: {
     type: String,
     required: true,
@@ -129,6 +133,7 @@ userSchema.statics.SignupOtpConfirm = async function (
       name,
       mobileNumber,
       avatar,
+      admin: false,
       otp: globalOtp,
     });
 

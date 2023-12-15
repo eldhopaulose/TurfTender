@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
-  userId: {
+  name: {
+    type: String,
+    required: true,
+  },
+  mobileNumber: {
     type: String,
     required: true,
   },
@@ -18,6 +22,13 @@ const bookSchema = new Schema({
   time: {
     type: String,
     required: true,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  event: {
+    type: Array,
   },
 });
 

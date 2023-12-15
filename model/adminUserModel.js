@@ -44,6 +44,10 @@ const adminUserSchema = new Schema({
     type: String,
     required: true,
   },
+  admin: {
+    type: Boolean,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -162,6 +166,7 @@ adminUserSchema.statics.adminSignupOtpConfirm = async function (
       password: hash,
       avatar,
       otp: globalOtp,
+      admin: true,
     });
 
     console.log("Admin user created successfully", globalOtp);
