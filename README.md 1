@@ -4,7 +4,7 @@ Welcome to the TurfTender API documentation. TurfTender is a platform that conne
 
 ## Base URL
 
-The base URL for all API endpoints is [https://turftender.onrender.com/api](https://turftender.onrender.com/api).
+The base URL for all API endpoints is [https://turftender.onrender.com/api](https://turftender.onrender.com/api)
 
 ## Endpoints
 
