@@ -51,7 +51,7 @@ const sinupUserOtpConfirm = async (req, res) => {
       otp
     );
     console.log(userOtp);
-    res.status(200).json({ userOtp });
+    res.status(200).json({ userOtp, success: "Registration Success" });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
